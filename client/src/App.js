@@ -1,22 +1,29 @@
-import axios from 'axios';
-import './App.css';
-
-//data will be the string we send from our server
-const apiCall = () => {
-  axios.get('http://localhost:8080').then((data) => {
-    //this console.log will be in our frontend console
-    console.log(data);
-  });
-}
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
+
+  const [backendData, setBackendData] = useState({ users: [] });
+  useEffect(() => {
+    fetch('/api')
+      .then((response) => response.json())
+      .then((data) => {
+        setBackendData(data);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <button onClick={apiCall}>Make API Call</button>
-
-      </header>
+    <div>
+      <h1>Harmony</h1>
+      <h3>Log in</h3>
+      <p><b>Users</b></p>
+      {(typeof backendData.users === 'undefined') ? (
+        <P>Loading...</P>
+      ) : (
+        backendData.users.map((user, i) => (
+          <p key={i}>{user}</p>
+        ))
+      )}
     </div>
   );
 }
