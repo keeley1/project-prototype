@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS daily_tasks;
 CREATE TABLE daily_tasks (
   task_id INT NOT NULL UNIQUE AUTO_INCREMENT,
   task VARCHAR(300) NOT NULL,
-  task_complete TINYINT(1) NOT NULL,
-  PRIMARY KEY(daily_tasks_id)
+  PRIMARY KEY(task_id)
 );
+
+#   task_complete TINYINT(1) NOT NULL,
