@@ -5,7 +5,7 @@ html {
 .nav-list {
   margin-top: -10px;
   list-style-type: none;
-  background-color: #5DC5F1;
+  background-color: #AFF4C6;
 }
 .nav-container {
   display: flex;
@@ -29,7 +29,7 @@ html {
 }
 
 .nav-item:hover {
-  background-color: #95dfff;
+  background-color: #dcffe7;
 }
 
 .home-container {
@@ -38,7 +38,7 @@ html {
 
 .home-todo {
   text-decoration: none;
-  color: #287494;
+  color: #4c5aa2;
   transition: 0.4s ease;
 }
 
@@ -60,6 +60,9 @@ html {
 }
 
 .todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 5px;
   width: 25%;
   margin-top: 5px;
@@ -79,12 +82,28 @@ html {
   padding: 7px;
   margin-left: 10px;
   cursor: pointer;
-  background-color: #e5e5e5;
+  background-color: #AFBBF4;
   border: none;
-  border-radius: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 25px;
   transition: 0.4s ease;
 }
 
 .todo-button:hover {
-  background-color: #b1b1b1;
+  background-color: #c8cfef;
+}
+
+.delete-button {
+  background-color: #AFF4C6;
+  border: none;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.4s ease;
+}
+
+.delete-button:hover {
+  background-color: #dcffe7;
+  cursor: pointer;
 }

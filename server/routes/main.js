@@ -5,7 +5,7 @@ module.exports = function(app) {
         res.json({"users": ["userOne", "userTwo", "userThree"] });
     });
     app.get('/getitems', (req, res) => {
-        let sqlquery = "SELECT task FROM daily_tasks";
+        let sqlquery = "SELECT task, task_id FROM daily_tasks";
 
         db.query(sqlquery, (err, result) => {
             if (err) {
@@ -35,6 +35,22 @@ module.exports = function(app) {
             console.log('Item added successfully');
             res.status(200).send('Item added successfully');
           }
+        });
+    });
+    app.post('/deleteitem', (req, res) => {
+        let itemId = req.body.itemId; 
+        console.log(itemId);
+        let sqlquery = "DELETE FROM daily_tasks WHERE task_id = ?";
+
+        db.query(sqlquery, [itemId], (err, result) => {
+            if (err) {
+                console.log('Error deleting item:', err);
+                res.status(500).send('Error deleting item');
+            } 
+            else {
+                console.log('Item deleted successfully');
+                res.status(200).send('Item deleted successfully');
+            }
         });
     });
 }
