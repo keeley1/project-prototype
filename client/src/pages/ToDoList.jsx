@@ -15,10 +15,10 @@ const ToDoList = () => {
                 if (data.items) {
                     setItems(data.items);
                 } else {
-                    console.error('Error getting items:', data.error);
+                    console.error('Error retrieving items:', data.error);
                 }
             })
-            .catch(error => console.error('Error getting items:', error));
+            .catch(error => console.error('Error retrieving items:', error));
     };
 
     const handleNewItemChange = (event) => {

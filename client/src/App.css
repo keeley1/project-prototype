@@ -54,6 +54,29 @@ html {
   margin: 20px;
 }
 
+.page-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-image {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.features-title {
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.list-style {
+  display: flex;
+  justify-content: center;
+}
+
 .todo-list {
   list-style: none;
   margin-left: -40px;
@@ -95,7 +118,7 @@ html {
 }
 
 .delete-button {
-  background-color: #AFF4C6;
+  background-color: #cccccc;
   border: none;
   border-radius: 3px;
   padding-left: 10px;
@@ -104,6 +127,6 @@ html {
 }
 
 .delete-button:hover {
-  background-color: #dcffe7;
+  background-color: #e2e1e1;
   cursor: pointer;
 }
