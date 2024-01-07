@@ -39,7 +39,6 @@ module.exports = function(app) {
     });
     app.post('/deleteitem', (req, res) => {
         let itemId = req.body.itemId; 
-        console.log(itemId);
         let sqlquery = "DELETE FROM daily_tasks WHERE task_id = ?";
 
         db.query(sqlquery, [itemId], (err, result) => {
